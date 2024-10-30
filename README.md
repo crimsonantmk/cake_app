@@ -1,1 +1,2 @@
-first flutter application using flutter/firebase
+A cake ordering application
+still far from finished
