@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delightful Bakes - User Dashboard</title>
+    <style>
+        /* Reset styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        /* Login Form */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-form {
+            background-color: #ffe5e5;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .login-form input[type="text"], .login-form input[type="password"] {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .login-form button {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        /* Dashboard header */
+        .dashboard-header {
+            background-color: #ff6b6b;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        /* Dashboard layout */
+        .dashboard {
+            display: flex;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+        .sidebar {
+            width: 25%;
+            background-color: #ffe5e5;
+            padding: 1rem;
+        }
+        .sidebar ul {
+            list-style-type: none;
+        }
+        .sidebar li a {
+            display: block;
+            padding: 0.8rem;
+            color: #ff6b6b;
+            text-decoration: none;
+        }
+        .sidebar li a:hover {
+            background-color: #ff6b6b;
+            color: #fff;
+            border-radius: 5px;
+        }
+        .main-content {
+            width: 75%;
+            padding: 1rem;
+        }
+        .dashboard-section {
+            background-color: #fff;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff3d3d;
+        }
+        /* Hide dashboard by default */
+        .dashboard-container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Login Form -->
+    <div class="login-container" id="login-container">
+        <div class="login-form">
+            <h2>Login to Delightful Bakes</h2>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+<a href="home">    </a><br>
+<button onclick="window.location.href='homepage.html'">Go to Homepage</button>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard-container" id="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Welcome to Delightful Bakes!</h1>
+        </header>
+
+        <section class="dashboard">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <ul>
+                    <li><a href="#profile">My Profile</a></li>
+                    <li><a href="#orders">Order History</a></li>
+                    <li><a href="#favorites">Favorite Bakes</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="main-content">
+                <!-- Profile Section -->
+                <section id="profile" class="dashboard-section">
+                    <h2>My Profile</h2>
+                    <p><strong>Name:</strong> Jane Doe</p>
+                    <p><strong>Email:</strong> janedoe@example.com</p>
+                    <button onclick="editProfile()">Edit Profile</button>
+                </section>
+
+                <!-- Order History Section -->
+                <section id="orders" class="dashboard-section">
+                    <h2>Order History</h2>
+                    <ul id="order-list">
+                        <!-- JavaScript will populate this section -->
+                    </ul>
+                </section>
+
+                <!-- Favorites Section -->
+                <section id="favorites" class="dashboard-section">
+                    <h2>Favorite Bakes</h2>
+                    <ul id="favorite-list">
+                        <li>Chocolate Cake</li>
+                        <li>Vanilla Cupcakes</li>
+                        <li>Red Velvet Brownies</li>
+                    </ul>
+                </section>
+            </main>
+        </section>
+    </div>
+
+    <script>
+        // Sample order data
+        const orders = [
+            { id: 1, item: 'Chocolate Cake', date: '2024-01-15', status: 'Delivered' },
+            { id: 2, item: 'Vanilla Cupcakes', date: '2024-02-10', status: 'Processing' },
+            { id: 3, item: 'Red Velvet Brownies', date: '2024-03-20', status: 'Delivered' }
+        ];
+
+        // Function to handle login
+        function login() {
+            const username = document.getElementById('username').value;
+
+            // Only check if username is "test"
+            if (username === "test") {
+                document.getElementById("login-container").style.display = "none";
+                document.getElementById("dashboard-container").style.display = "block";
+                loadOrderHistory();
+            } else {
+                alert("Incorrect username. Please use 'test' as the username.");
+            }
+        }
+
+        // Load order history
+        function loadOrderHistory() {
+            const orderList = document.getElementById('order-list');
+            orders.forEach(order => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${order.item} - ${order.date} - ${order.status}`;
+                orderList.appendChild(listItem);
+            });
+        }
+
+        // Placeholder for editing profile
+        function editProfile() {
+            alert('Edit profile feature coming soon!');
+        }
+    </script>
+</body>
+</html>

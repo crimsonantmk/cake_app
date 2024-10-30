@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delightful Bakes Cake Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f1f1;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2 {
+            color: #d16d82;
+            text-align: center;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        ul, ol {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        ul li, ol li {
+            margin: 10px 0;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+
+        a {
+            color: #d16d82;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        form {
+            width: 60%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        form label {
+            font-weight: bold;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        form input[type="submit"] {
+            background-color: #d16d82;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #b2546c;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #d16d82;
+            color: white;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Heading -->
+    <h1>Welcome to Delightful Bakes</h1>
+
+    <!-- Paragraph -->
+    <p>At Delightful Bakes, we create mouth-watering cakes for every special occasion. From birthdays to weddings, we have the perfect cake for you, baked with love and attention to detail.</p>
+
+    <!-- Image -->
+    <img src="C:/Users/ADMIN/Downloads/peakpx.jpg" alt="Delicious Cake" width="600" height="400">
+
+    <!-- Link -->
+    <p>Check out our <a href="https://www.bbcgoodfood.com/recipes/collection/cake-recipes" target="_blank">Cake Menu</a> for a variety of delightful cakes and desserts. You’ll love our selection!</p>
+
+    <!-- Unordered List -->
+    <h2>Our Bestsellers:</h2>
+    <ul>
+        <li><a href="https://www.bbcgoodfood.com/recipes/ultimate-chocolate-cake" target="_blank">Chocolate Fudge Cake</a></li>
+        <li><a href="https://www.bbcgoodfood.com/recipes/red-velvet-cake" target="_blank">Red Velvet Cake</a></li>
+        <li><a href="https://www.bbcgoodfood.com/recipes/lemon-drizzle-cake" target="_blank">Lemon Drizzle Cake</a></li>
+        <li><a href="https://www.bbcgoodfood.com/recipes/easy-no-bake-cheesecake" target="_blank">Strawberry Cheesecake</a></li>
+        <li><a href="https://www.bbcgoodfood.com/recipes/victoria-sponge" target="_blank">Classic Victoria Sponge</a></li>
+    </ul>
+
+    <!-- Ordered List -->
+    <h2>How to Order Your Custom Cake:</h2>
+    <ol>
+        <li>Choose your favorite flavor from our <a href="https://www.bbcgoodfood.com/recipes/category/all-baking" target="_blank">custom cake options</a>.</li>
+        <li>Select the size and design that suits your event.</li>
+        <li>Fill out the order form with all necessary details.</li>
+        <li>Submit your order and we’ll confirm your details and delivery time!</li>
+    </ol>
+
+    <!-- Simple Form -->
+    <h2>Contact Us</h2>
+    <form action="/submit-form" method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="Enter your email"><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" placeholder="Write your message here"></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Footer -->
+    <footer>
+        <p>Follow us on <a href="https://www.instagram.com/explore/tags/cake/" target="_blank">Instagram</a> and <a href="https://www.facebook.com/hashtag/cakes" target="_blank">Facebook</a> for daily cake inspiration and updates!</p>
+        <p>&copy; 2024 Delightful Bakes. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
